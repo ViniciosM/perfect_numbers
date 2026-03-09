@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-class SearchRecord extends Equatable {
+class SearchRecordEntity extends Equatable {
   final int id;
   final String type;
   final String input;
   final String result;
   final DateTime createdAt;
 
-  const SearchRecord({
+  const SearchRecordEntity({
     required this.id,
     required this.type,
     required this.input,

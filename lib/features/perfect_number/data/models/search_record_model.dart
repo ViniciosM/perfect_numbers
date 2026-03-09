@@ -34,8 +34,8 @@ class SearchRecordModel {
     };
   }
 
-  SearchRecord toEntity() {
-    return SearchRecord(
+  SearchRecordEntity toEntity() {
+    return SearchRecordEntity(
       id: id ?? 0,
       type: type,
       input: input,
@@ -44,7 +44,7 @@ class SearchRecordModel {
     );
   }
 
-  factory SearchRecordModel.fromEntity(SearchRecord entity) {
+  factory SearchRecordModel.fromEntity(SearchRecordEntity entity) {
     return SearchRecordModel(
       id: entity.id == 0 ? null : entity.id,
       type: entity.type,

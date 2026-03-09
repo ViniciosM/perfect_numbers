@@ -21,6 +21,7 @@ dependencies:
   equatable: ^2.0.8
   path: ^1.9.1
   intl: ^0.20.2
+  google_fonts: ^6.1.0
 
   # State Management 
   flutter_bloc: ^9.1.1

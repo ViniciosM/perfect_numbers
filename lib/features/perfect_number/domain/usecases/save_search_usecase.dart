@@ -6,5 +6,6 @@ class SaveSearchUsecase {
 
   SaveSearchUsecase(this._repository);
 
-  Future<void> call(SearchRecord record) => _repository.saveSearch(record);
+  Future<void> call(SearchRecordEntity record) =>
+      _repository.saveSearch(record);
 }

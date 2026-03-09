@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:perfect_numbers/core/di/injection.dart';
 import 'package:perfect_numbers/core/l10n/app_localizations.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:perfect_numbers/core/theme/app_theme.dart';
+import 'package:perfect_numbers/features/perfect_number/presentation/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Perfect Numbers',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.dark(),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -23,7 +27,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [Locale('en'), Locale('pt')],
-      home: Scaffold(body: Center(child: Text('Perfect Numbers'))),
+      home: const HomeScreen(),
     );
   }
 }

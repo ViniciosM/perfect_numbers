@@ -101,14 +101,182 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'Perfect Numbers'**
+  /// **'PerfectNum'**
   String get appTitle;
+
+  /// No description provided for @appSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore the beauty of perfect numbers'**
+  String get appSubtitle;
+
+  /// No description provided for @tabCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get tabCheck;
+
+  /// No description provided for @tabRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Range'**
+  String get tabRange;
+
+  /// No description provided for @tabHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get tabHistory;
+
+  /// No description provided for @checkInputLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a number'**
+  String get checkInputLabel;
+
+  /// No description provided for @checkInputHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 28'**
+  String get checkInputHint;
+
+  /// No description provided for @checkButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get checkButton;
+
+  /// No description provided for @checkInfoText.
+  ///
+  /// In en, this message translates to:
+  /// **'A perfect number equals the sum of its proper divisors.\nExamples: 6, 28, 496, 8128'**
+  String get checkInfoText;
+
+  /// No description provided for @resultIsPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'✨ Perfect Number!'**
+  String get resultIsPerfect;
+
+  /// No description provided for @resultIsNotPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'Not a Perfect Number'**
+  String get resultIsNotPerfect;
+
+  /// No description provided for @resultDivisorsEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'Divisors: {divisors} = {number}'**
+  String resultDivisorsEqual(String divisors, int number);
+
+  /// No description provided for @resultDivisorsNotEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'Sum of divisors: {divisors} = {sum} ≠ {number}'**
+  String resultDivisorsNotEqual(String divisors, int sum, int number);
+
+  /// No description provided for @rangeFromLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get rangeFromLabel;
+
+  /// No description provided for @rangeToLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get rangeToLabel;
+
+  /// No description provided for @rangeFromHint.
+  ///
+  /// In en, this message translates to:
+  /// **'1'**
+  String get rangeFromHint;
+
+  /// No description provided for @rangeToHint.
+  ///
+  /// In en, this message translates to:
+  /// **'10000'**
+  String get rangeToHint;
+
+  /// No description provided for @rangeFindButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Find Perfect Numbers'**
+  String get rangeFindButton;
+
+  /// No description provided for @rangeResultSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} perfect number{count, plural, one{} other{s}} found between {start} and {end}'**
+  String rangeResultSummary(int count, int start, int end);
+
+  /// No description provided for @rangeNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No perfect numbers found\nbetween {start} and {end}'**
+  String rangeNoResults(int start, int end);
+
+  /// No description provided for @rangeEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a range to discover\nperfect numbers'**
+  String get rangeEmptyTitle;
+
+  /// No description provided for @rangeEmptyTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip: try 1 → 10000 to find 6, 28, 496, 8128'**
+  String get rangeEmptyTip;
+
+  /// No description provided for @historyChecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Checked: {input}'**
+  String historyChecked(String input);
+
+  /// No description provided for @historyRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Range: {input}'**
+  String historyRange(String input);
+
+  /// No description provided for @historyResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Result: {result}'**
+  String historyResult(String result);
+
+  /// No description provided for @historyEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No searches yet.\nCheck or find a number first!'**
+  String get historyEmpty;
 
   /// No description provided for @loading.
   ///
   /// In en, this message translates to:
-  /// **'Loading...'**
+  /// **'Calculating...'**
   String get loading;
+
+  /// No description provided for @errorInvalidNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid number.'**
+  String get errorInvalidNumber;
+
+  /// No description provided for @errorInvalidRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter valid numbers.'**
+  String get errorInvalidRange;
+
+  /// No description provided for @errorStartBeforeEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Start must be less than end.'**
+  String get errorStartBeforeEnd;
 }
 
 class _AppLocalizationsDelegate

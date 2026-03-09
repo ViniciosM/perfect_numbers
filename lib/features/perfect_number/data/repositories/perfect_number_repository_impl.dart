@@ -9,13 +9,13 @@ class PerfectNumberRepositoryImpl implements PerfectNumberRepository {
   PerfectNumberRepositoryImpl(this._datasource);
 
   @override
-  Future<void> saveSearch(SearchRecord record) async {
+  Future<void> saveSearch(SearchRecordEntity record) async {
     final model = SearchRecordModel.fromEntity(record);
     await _datasource.insertSearch(model);
   }
 
   @override
-  Future<List<SearchRecord>> getHistory() async {
+  Future<List<SearchRecordEntity>> getHistory() async {
     final models = await _datasource.getAllSearches();
     return models.map((m) => m.toEntity()).toList();
   }

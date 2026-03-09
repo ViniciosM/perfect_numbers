@@ -1,7 +1,82 @@
 {
   "@@locale": "pt",
 
-  "appTitle": "Números Perfeitos",
+  "appTitle": "PerfectNum",
+  "appSubtitle": "Explore a beleza dos números perfeitos",
 
-  "loading": "Carregando..."
+  "tabCheck": "Verificar",
+  "tabRange": "Intervalo",
+  "tabHistory": "Histórico",
+
+  "checkInputLabel": "Digite um número",
+  "checkInputHint": "ex: 28",
+  "checkButton": "Verificar",
+  "checkInfoText": "Um número perfeito é igual à soma de seus divisores próprios.\nExemplos: 6, 28, 496, 8128",
+
+  "resultIsPerfect": "✨ Número Perfeito!",
+  "resultIsNotPerfect": "Não é um Número Perfeito",
+  "resultDivisorsEqual": "Divisores: {divisors} = {number}",
+  "@resultDivisorsEqual": {
+    "placeholders": {
+      "divisors": { "type": "String" },
+      "number": { "type": "int" }
+    }
+  },
+  "resultDivisorsNotEqual": "Soma dos divisores: {divisors} = {sum} ≠ {number}",
+  "@resultDivisorsNotEqual": {
+    "placeholders": {
+      "divisors": { "type": "String" },
+      "sum": { "type": "int" },
+      "number": { "type": "int" }
+    }
+  },
+
+  "rangeFromLabel": "De",
+  "rangeToLabel": "Até",
+  "rangeFromHint": "1",
+  "rangeToHint": "10000",
+  "rangeFindButton": "Buscar Números Perfeitos",
+  "rangeResultSummary": "{count} número{count, plural, one{} other{s}} perfeito{count, plural, one{} other{s}} encontrado{count, plural, one{} other{s}} entre {start} e {end}",
+  "@rangeResultSummary": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "start": { "type": "int" },
+      "end": { "type": "int" }
+    }
+  },
+  "rangeNoResults": "Nenhum número perfeito encontrado\nentre {start} e {end}",
+  "@rangeNoResults": {
+    "placeholders": {
+      "start": { "type": "int" },
+      "end": { "type": "int" }
+    }
+  },
+  "rangeEmptyTitle": "Digite um intervalo para descobrir\nnúmeros perfeitos",
+  "rangeEmptyTip": "Dica: tente 1 → 10000 para encontrar 6, 28, 496, 8128",
+
+  "historyChecked": "Verificado: {input}",
+  "@historyChecked": {
+    "placeholders": {
+      "input": { "type": "String" }
+    }
+  },
+  "historyRange": "Intervalo: {input}",
+  "@historyRange": {
+    "placeholders": {
+      "input": { "type": "String" }
+    }
+  },
+  "historyResult": "Resultado: {result}",
+  "@historyResult": {
+    "placeholders": {
+      "result": { "type": "String" }
+    }
+  },
+  "historyEmpty": "Nenhuma busca ainda.\nVerifique ou encontre um número primeiro!",
+
+  "loading": "Calculando...",
+
+  "errorInvalidNumber": "Por favor, insira um número válido.",
+  "errorInvalidRange": "Por favor, insira números válidos.",
+  "errorStartBeforeEnd": "O início deve ser menor que o fim."
 }

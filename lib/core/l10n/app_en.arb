@@ -1,6 +1,82 @@
 {
   "@@locale": "en",
 
-  "appTitle": "Perfect Numbers",
-  "loading": "Loading..."
+  "appTitle": "PerfectNum",
+  "appSubtitle": "Explore the beauty of perfect numbers",
+
+  "tabCheck": "Check",
+  "tabRange": "Range",
+  "tabHistory": "History",
+
+  "checkInputLabel": "Enter a number",
+  "checkInputHint": "e.g. 28",
+  "checkButton": "Check",
+  "checkInfoText": "A perfect number equals the sum of its proper divisors.\nExamples: 6, 28, 496, 8128",
+
+  "resultIsPerfect": "✨ Perfect Number!",
+  "resultIsNotPerfect": "Not a Perfect Number",
+  "resultDivisorsEqual": "Divisors: {divisors} = {number}",
+  "@resultDivisorsEqual": {
+    "placeholders": {
+      "divisors": { "type": "String" },
+      "number": { "type": "int" }
+    }
+  },
+  "resultDivisorsNotEqual": "Sum of divisors: {divisors} = {sum} ≠ {number}",
+  "@resultDivisorsNotEqual": {
+    "placeholders": {
+      "divisors": { "type": "String" },
+      "sum": { "type": "int" },
+      "number": { "type": "int" }
+    }
+  },
+
+  "rangeFromLabel": "From",
+  "rangeToLabel": "To",
+  "rangeFromHint": "1",
+  "rangeToHint": "10000",
+  "rangeFindButton": "Find Perfect Numbers",
+  "rangeResultSummary": "{count} perfect number{count, plural, one{} other{s}} found between {start} and {end}",
+  "@rangeResultSummary": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "start": { "type": "int" },
+      "end": { "type": "int" }
+    }
+  },
+  "rangeNoResults": "No perfect numbers found\nbetween {start} and {end}",
+  "@rangeNoResults": {
+    "placeholders": {
+      "start": { "type": "int" },
+      "end": { "type": "int" }
+    }
+  },
+  "rangeEmptyTitle": "Enter a range to discover\nperfect numbers",
+  "rangeEmptyTip": "Tip: try 1 → 10000 to find 6, 28, 496, 8128",
+
+  "historyChecked": "Checked: {input}",
+  "@historyChecked": {
+    "placeholders": {
+      "input": { "type": "String" }
+    }
+  },
+  "historyRange": "Range: {input}",
+  "@historyRange": {
+    "placeholders": {
+      "input": { "type": "String" }
+    }
+  },
+  "historyResult": "Result: {result}",
+  "@historyResult": {
+    "placeholders": {
+      "result": { "type": "String" }
+    }
+  },
+  "historyEmpty": "No searches yet.\nCheck or find a number first!",
+
+  "loading": "Calculating...",
+
+  "errorInvalidNumber": "Please enter a valid number.",
+  "errorInvalidRange": "Please enter valid numbers.",
+  "errorStartBeforeEnd": "Start must be less than end."
 }

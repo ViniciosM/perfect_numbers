@@ -6,5 +6,5 @@ class GetHistoryUsecase {
 
   GetHistoryUsecase(this._repository);
 
-  Future<List<SearchRecord>> call() => _repository.getHistory();
+  Future<List<SearchRecordEntity>> call() => _repository.getHistory();
 }
