@@ -7,6 +7,7 @@ import 'package:perfect_numbers/features/perfect_number/domain/usecases/check_pe
 import 'package:perfect_numbers/features/perfect_number/domain/usecases/find_perfect_numbers_usecase.dart';
 import 'package:perfect_numbers/features/perfect_number/domain/usecases/get_history_usecase.dart';
 import 'package:perfect_numbers/features/perfect_number/domain/usecases/save_search_usecase.dart';
+import 'package:perfect_numbers/features/perfect_number/presentation/cubit/perfect_number_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -34,4 +35,14 @@ Future<void> setupDependencies() async {
 
   sl.registerLazySingleton<SaveSearchUsecase>(() => SaveSearchUsecase(sl()));
   sl.registerLazySingleton<GetHistoryUsecase>(() => GetHistoryUsecase(sl()));
+
+  // ─── Cubit ─────────────────────────────────────────────────────────────────
+  sl.registerFactory<PerfectNumberCubit>(
+    () => PerfectNumberCubit(
+      checkPerfectNumber: sl(),
+      findPerfectNumbers: sl(),
+      saveSearch: sl(),
+      getHistory: sl(),
+    ),
+  );
 }
