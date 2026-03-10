@@ -48,8 +48,8 @@ class _PerfectCheckBadgeWidgetState extends State<PerfectCheckBadgeWidget>
   Widget build(BuildContext context) {
     final colors = Theme.of(context).extension<AppColors>()!;
     final accent = widget.isPerfect ? colors.success : colors.error;
-    final sum = widget.divisors.fold(0, (a, b) => a + b);
     final l10n = AppLocalizations.of(context)!;
+    final sum = widget.divisors.fold(0, (a, b) => a + b);
 
     return FadeTransition(
       opacity: _fade,
@@ -87,29 +87,42 @@ class _PerfectCheckBadgeWidgetState extends State<PerfectCheckBadgeWidget>
                 ),
               ),
               const SizedBox(height: 8),
-              Text(
-                widget.isPerfect
-                    ? l10n.resultDivisorsEqual(
-                        widget.divisors.join(' + '),
-                        widget.number,
-                      )
-                    : l10n.resultDivisorsNotEqual(
-                        widget.divisors.isEmpty
-                            ? '0'
-                            : widget.divisors.join(' + '),
-                        sum,
-                        widget.number,
-                      ),
-                textAlign: TextAlign.center,
-                style: GoogleFonts.spaceGrotesk(
-                  fontSize: 14,
-                  color: Colors.white60,
-                  height: 1.5,
-                ),
-              ),
+              _buildDivisorText(l10n, sum),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildDivisorText(AppLocalizations l10n, int sum) {
+    if (widget.divisors.isEmpty && widget.number > 1000000000) {
+      return Text(
+        widget.isPerfect
+            ? l10n.resultLargeNumberPerfect
+            : l10n.resultLargeNumberNotPerfect,
+        textAlign: TextAlign.center,
+        style: GoogleFonts.spaceGrotesk(
+          fontSize: 14,
+          color: Colors.white60,
+          height: 1.5,
+        ),
+      );
+    }
+
+    return Text(
+      widget.isPerfect
+          ? l10n.resultDivisorsEqual(widget.divisors.join(' + '), widget.number)
+          : l10n.resultDivisorsNotEqual(
+              widget.divisors.isEmpty ? '0' : widget.divisors.join(' + '),
+              sum,
+              widget.number,
+            ),
+      textAlign: TextAlign.center,
+      style: GoogleFonts.spaceGrotesk(
+        fontSize: 14,
+        color: Colors.white60,
+        height: 1.5,
       ),
     );
   }

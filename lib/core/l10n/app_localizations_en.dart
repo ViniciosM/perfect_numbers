@@ -118,4 +118,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorStartBeforeEnd => 'Start must be less than end.';
+
+  @override
+  String get resultLargeNumberPerfect =>
+      'This is a perfect number.\n(Divisors omitted — number too large to display)';
+
+  @override
+  String get resultLargeNumberNotPerfect =>
+      'This is not a perfect number.\n(Divisors omitted — number too large to display)';
 }

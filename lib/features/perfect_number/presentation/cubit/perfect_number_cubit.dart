@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:perfect_numbers/core/l10n/l10n_keys.dart';
 import 'package:perfect_numbers/features/perfect_number/domain/entities/perfect_number_result_entity.dart';
@@ -9,8 +10,6 @@ import 'package:perfect_numbers/features/perfect_number/domain/usecases/save_sea
 import 'package:perfect_numbers/features/perfect_number/presentation/cubit/perfect_number_state.dart';
 
 class PerfectNumberCubit extends Cubit<PerfectNumberState> {
-  final CheckPerfectNumberUsecase _checkPerfectNumber;
-  final FindPerfectNumbersUsecase _findPerfectNumbers;
   final SaveSearchUsecase _saveSearch;
   final GetHistoryUsecase _getHistory;
 
@@ -19,9 +18,7 @@ class PerfectNumberCubit extends Cubit<PerfectNumberState> {
     required FindPerfectNumbersUsecase findPerfectNumbers,
     required SaveSearchUsecase saveSearch,
     required GetHistoryUsecase getHistory,
-  }) : _checkPerfectNumber = checkPerfectNumber,
-       _findPerfectNumbers = findPerfectNumbers,
-       _saveSearch = saveSearch,
+  }) : _saveSearch = saveSearch,
        _getHistory = getHistory,
        super(const PerfectNumberInitial());
 
@@ -36,8 +33,8 @@ class PerfectNumberCubit extends Cubit<PerfectNumberState> {
 
     emit(const PerfectNumberLoading());
     try {
-      final isPerfect = _checkPerfectNumber(number);
-      final divisors = _getDivisors(number);
+      final isPerfect = await compute(_runCheck, number);
+      final divisors = await compute(_runGetDivisors, number);
 
       await _saveSearch(
         SearchRecordEntity(
@@ -78,13 +75,13 @@ class PerfectNumberCubit extends Cubit<PerfectNumberState> {
 
     emit(const PerfectNumberLoading());
     try {
-      final numbers = _findPerfectNumbers(start, end);
+      final numbers = await compute(_runFind, _FindParams(start, end));
       final results = numbers
           .map(
             (n) => PerfectNumberResult(
               number: n,
               isPerfect: true,
-              divisors: _getDivisors(n),
+              divisors: _runGetDivisors(n),
             ),
           )
           .toList();
@@ -120,17 +117,31 @@ class PerfectNumberCubit extends Cubit<PerfectNumberState> {
       emit(PerfectNumberError(message: e.toString()));
     }
   }
+}
 
-  List<int> _getDivisors(int n) {
-    if (n < 2) return [];
-    final divisors = <int>[1];
-    for (int i = 2; i * i <= n; i++) {
-      if (n % i == 0) {
-        divisors.add(i);
-        if (i != n ~/ i) divisors.add(n ~/ i);
-      }
+bool _runCheck(int n) => CheckPerfectNumberUsecase()(n);
+
+List<int> _runGetDivisors(int n) {
+  const divisorThreshold = 1000000000; //1 bi
+  if (n > divisorThreshold) return [];
+
+  if (n < 2) return [];
+  final divisors = <int>[1];
+  for (int i = 2; i * i <= n; i++) {
+    if (n % i == 0) {
+      divisors.add(i);
+      if (i != n ~/ i) divisors.add(n ~/ i);
     }
-    divisors.sort();
-    return divisors;
   }
+  divisors.sort();
+  return divisors;
+}
+
+List<int> _runFind(_FindParams params) =>
+    FindPerfectNumbersUsecase()(params.start, params.end);
+
+class _FindParams {
+  final int start;
+  final int end;
+  const _FindParams(this.start, this.end);
 }

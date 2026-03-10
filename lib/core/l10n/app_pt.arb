@@ -78,5 +78,8 @@
 
   "errorInvalidNumber": "Por favor, insira um número válido.",
   "errorInvalidRange": "Por favor, insira números válidos.",
-  "errorStartBeforeEnd": "O início deve ser menor que o fim."
+  "errorStartBeforeEnd": "O início deve ser menor que o fim.",
+
+  "resultLargeNumberPerfect": "Este é um número perfeito.\n(Divisores omitidos — número muito grande para exibir)",
+  "resultLargeNumberNotPerfect": "Este não é um número perfeito.\n(Divisores omitidos — número muito grande para exibir)"
 }

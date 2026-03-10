@@ -277,6 +277,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Start must be less than end.'**
   String get errorStartBeforeEnd;
+
+  /// No description provided for @resultLargeNumberPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a perfect number.\n(Divisors omitted — number too large to display)'**
+  String get resultLargeNumberPerfect;
+
+  /// No description provided for @resultLargeNumberNotPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'This is not a perfect number.\n(Divisors omitted — number too large to display)'**
+  String get resultLargeNumberNotPerfect;
 }
 
 class _AppLocalizationsDelegate
