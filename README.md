@@ -114,3 +114,9 @@ A perfect number is a positive integer that equals the sum of its proper divisor
 | 28 | 1 + 2 + 4 + 7 + 14 | = 28 ✅ |
 | 496 | 1 + 2 + 4 + 8 + 16 + 31 + 62 + 124 + 248 | = 496 ✅ |
 | 8128 | 1 + 2 + 4 + 8 + 16 + 32 + 64 + 127 + ... | = 8128 ✅ |
+
+
+## 📱 Mobile Screenshots
+| Check | Range | History |
+| :---: | :---: | :---: |
+| <img alt="check"  src="https://github.com/user-attachments/assets/2619df13-f9be-458a-8bb8-ddc45cf60d27" height="600"> | <img alt="find" src="https://github.com/user-attachments/assets/d656e7fc-46d3-4ca9-aa8b-9f5a6d49b9c1" height="600"> | <img  alt="history" src="https://github.com/user-attachments/assets/1c4f9277-1b25-4937-8bfc-1743c916cae9" height="600"> |
